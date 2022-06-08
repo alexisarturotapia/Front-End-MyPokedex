@@ -1,0 +1,31 @@
+<div class="container">
+    <div class="row header">
+        <h1 class="title col-sm-12 col-md-12 col-lg-3 col-xl-3">MyPokedex</h1>
+    </div>
+    <img class="bg__pokeball" src="../../../assets/images/pokeball-background.png" alt="pokeball">
+    <div class="row justify-content-center" *ngIf="isLoading">
+        <div class="col-4">
+            <span>Loading.... please wait!!</span>
+            <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+        </div>
+    </div>
+   
+
+    <div class="row pokemon__list" (scroll)="onScroll($event)">
+        <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4" *ngFor="let mypokemon of myPokemons" (click)="onDetail(mypokemon)">
+            <div class="card {{'bg-color-'+ mypokemon.types[0] + '-light'}}">
+                <img class="card__bg" src="../../../assets/images/pokeball-background.png" alt="pokeball-card">
+                <div class="card__info">
+                    <h2 class="color-black">{{mypokemon.name}}</h2>
+                    <div>Weight: {{mypokemon.weight}}</div><br>
+                    <div>Type: {{mypokemon.types}}</div><br>
+                    <div>Abilities: {{mypokemon.abilities}}</div><br>
+                    </div>
+                <div class="card__img">
+                    <img [src]="mypokemon.image" [alt]="mypokemon.name">
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

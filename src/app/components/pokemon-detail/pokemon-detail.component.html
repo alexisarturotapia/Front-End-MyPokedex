@@ -1,0 +1,23 @@
+<div class="sheet__img">
+    <img [src]="data.mypokemon.image" [alt]="data.mypokemon.name">
+</div>
+
+<mat-tab-group class="sheet">
+    
+      
+    <mat-tab label="Information">
+        <div>Name: {{data.mypokemon.name}}</div>
+        <div>Type: {{data.mypokemon.types}}</div>
+        <div>Weight: {{data.mypokemon.weight}}</div>
+        <div>Abilities: {{data.mypokemon.abilities}}</div>  
+    </mat-tab>
+    
+    <mat-tab label="Evolution">
+        <div>Evolution: {{myEvolution.evolution}}</div>
+    </mat-tab>
+
+    <mat-tab label="Description">
+        <div>Description: {{myDescription.characteristic}}</div>
+    </mat-tab>
+
+</mat-tab-group>
