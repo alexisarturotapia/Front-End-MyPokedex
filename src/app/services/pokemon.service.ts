@@ -5,10 +5,12 @@ import { MyPokemonList } from "../models/my-pokemon.list";
 import { MyPokemonEvolution } from "../models/my-pokemon.evolution";
 import { MyPokemonDescription } from "../models/my-pokemon.description";
 import { map } from "rxjs/operators";
+import { environment } from 'src/environments/environment.prod';
+
 
 @Injectable({providedIn: 'root'})
 export class PokemonService {
-    private pokemonBaseUrl = 'http://localhost:8080/mypokedex/';
+    private pokemonBaseUrl = environment.pokemonBaseUrl; //'http://34.227.207.247:8080/mypokedex/';
     
     constructor(private http: HttpClient) { }
  
